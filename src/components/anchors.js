@@ -11,6 +11,11 @@ function anchorNodeCreate(level, href, content) {
 }
 
 function anchorsInit(parentNode) {
+    while (parentNode.hasChildNodes()) {
+        // 清除所有子元素
+        parentNode.removeChild(parentNode.lastChild)
+    }
+
     const headings = document.querySelectorAll(".heading")
 
     headings.forEach((item, index) => {
