@@ -1,0 +1,124 @@
+/*
+    default-text-color: #333;
+    highlight-color: #D50000;
+    warning-color: #FFD600;
+*/
+body {
+    margin: 0;
+    overflow: hidden;
+}
+/* Scrollbar */
+body *::-webkit-scrollbar {
+    width: 6px;
+    height: 8px;
+    background: transparent;
+}
+@media screen and (min-width: 1024px) {
+    body *::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+}
+body *::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+}
+/* Scrollbar End */
+
+/* Closer */
+.closer {
+    height: 100%;
+    cursor: pointer;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
+.closer i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 100%;
+    text-align: center;
+    transition: color .3s, background .3s;
+}
+.closer i:hover {
+    color: black;
+    background-color: white;
+}
+
+.closer.circle i {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.closer.circle i:hover {
+    color: white;
+    background-color: rgba(235, 235, 235, 0.1);
+}
+.closer.circle i:active {
+    background-color: rgba(235, 235, 235, 0.15);
+}
+/* Closer End */
+
+/* Block Touch Mode */
+.floor.touch-mode,
+.list.touch-mode,
+.table.touch-mode,
+.details.touch-mode {
+    margin-left: 40px;
+}
+/* Block Touch Mode End */
+
+/* Block Mask */
+.floor .mask,
+.list .mask,
+.table .mask {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: calc(100% + 10px);
+    width: 32px;
+    margin: -5px -4px -5px 0;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+}
+/* Block Mask End */
+
+/* Fixed Components */
+.fixed-component {
+    position: absolute !important;
+    bottom: 0;
+    right: 0;
+    height: 54px;
+    transform: translateY(0);
+    -webkit-border-radius: 8px 0 0 0;
+            border-radius: 8px 0 0 0;
+    background-color: white;
+    -webkit-box-shadow: var(--shadow-3);
+            box-shadow: var(--shadow-3);
+    transition: transform .6s !important;
+}
+    /* Transition */
+    .fixed-component.slide-enter-from,
+    .fixed-component.slide-leave-to {
+        transform: translateY(54px);
+    }
+/* Fixed Components End */
+
+/* Fullscreen Mask */
+.fullscreen-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    transition: opacity .6s;
+}
+.fullscreen-mask.disabled {
+    opacity: 0;
+    pointer-events: none;
+}
+/* Fullscreen Mask End */

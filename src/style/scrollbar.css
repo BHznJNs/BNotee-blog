@@ -1,0 +1,14 @@
+::-webkit-scrollbar {
+    width: 6px;
+    height: 8px;
+    background: transparent;
+}
+@media screen and (min-width: 1024px) {
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+}

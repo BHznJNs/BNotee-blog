@@ -1,0 +1,93 @@
+.textfield-group {
+    position: sticky;
+    left: 0;
+    display: flex;
+    max-height: 54px;
+    contain: content;
+    border-radius: 8px 0 0 0;
+    transition: max-height .3s;
+}
+#note-textfield-group {
+    margin-bottom: 20px;
+}
+.textfield-group.disabled {
+    max-height: 0;
+}
+.textfield-group, .textfield-group * {
+    outline: none;
+}
+.textfield-group > * {
+    color: #424242;
+    background-color: #F5F5F5;
+    transition: .3s;
+}
+.textfield-group *:hover,
+.textfield-group *:focus {
+    background-color: white;
+    border-color: #616161;
+}
+
+/* Fixed */
+.textfield-group.fixed {
+    left: initial;
+    width: calc(100vw - 108px);
+    max-width: 480px;
+}
+.textfield-group.fixed * {
+    margin-bottom: 0 !important;
+}
+/* Fixed End */
+
+/* Selector */
+.selector {
+    color: #424242;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 6px 8px;
+    border: 0;
+    -webkit-border-radius: 8px 0 0 0;
+            border-radius: 8px 0 0 0;
+    border-right: solid 2px #bdbdbd;
+    border-bottom: solid 2px #bdbdbd;
+    appearance: none;
+    cursor: pointer;
+}
+/* Selector End */
+
+/* Textfield */
+.textfield {
+    width: 100%;
+    line-height: 20px;
+    padding: 6px 4px;
+    border-bottom: solid 2px #bdbdbd;
+    font-family: sans-serif;
+    cursor: pointer;
+    transition: .3s;
+}
+.textfield:focus {
+    cursor: text;
+}
+.fixed .textfield {
+    overflow-y: auto;
+}
+/* Textfield End */
+
+/* Textfield Closer Button */
+.textfield-closer {
+    border-bottom: solid 2px #bdbdbd;
+    line-height: 32px;
+}
+.fixed .textfield-closer {
+    line-height: 54px;
+}
+/* Textfield Closer Button End */
+
+/* In Uploader */
+.note-list > .textfield-group > .selector {
+    display: none;
+}
+.note-list > .textfield-group {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}

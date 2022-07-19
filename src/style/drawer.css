@@ -1,0 +1,177 @@
+@import url(./materialIcons.css);
+@import url(./scrollbar.css);
+
+:host {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    pointer-events: none;
+}
+:host(.active) {
+    pointer-events: auto;
+}
+
+.drawer {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    margin: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    -webkit-box-shadow: var(--shadow-16);
+            box-shadow: var(--shadow-16);
+    background-color: white;
+    contain: layout paint;
+    -webkit-overflow-scrolling: touch;
+    -webkit-transition: transform .9s .3s;
+            transition: transform .9s .3s;
+}
+.drawer-view {
+    position: absolute;
+    top: 72px;
+    bottom: 0;
+    width: 100%;
+    padding: 8px 0;
+    overflow: auto;
+}
+::-webkit-scrollbar {
+    width: 6px;
+    height: 8px;
+    background: transparent;
+}
+@media screen and (min-width: 1024px) {
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+/* Title Bar */
+.titlebar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 8px;
+    margin-bottom: 16px;
+    background-color: #333;
+    color: white;
+    z-index: 1;
+}
+.titlebar h1 {
+    margin: 0;
+    padding-left: 6px;
+    border: solid white 3px;
+    border-right: none;
+    user-select: none;
+    cursor: pointer;
+    font-weight: normal;
+    font-family: monospace;
+    -webkit-border-radius: 8px 0 0 8px;
+            border-radius: 8px 0 0 8px;
+    line-height: 1.2;
+}
+/* Title Bar End */
+
+/* 横屏 */
+@media screen and (orientation: landscape) {
+    .drawer {
+        right: 0;
+        width: 320px;
+        height: 100vh;
+        transform: translateX(340px);
+    }
+    .drawer.active {
+        transform: translateX(0);
+    }
+    .drawer .arrow-upward {
+        display: none;
+    }
+    @media screen and (min-width: 960px) {
+        .drawer {
+            width: 480px;
+            transform: translateX(500px);
+        }
+        .drawer-view {
+            top: 78px;
+        }
+        .closer i {
+            width: 48px !important;
+            height: 48px !important;
+        }
+    }
+}
+/* 竖屏 */
+@media screen and (orientation: portrait) {
+    .drawer {
+        width: 100vw;
+        height: 360px;
+        transform: translateY(-380px)
+    }
+    .drawer.active {
+        transform: translateY(0);
+    }
+    .drawer .arrow-forward {
+        display: none;
+    }
+    @media screen and (min-height: 1024px) {
+        .drawer {
+            height: 480px;
+            transform: translateX(500px);
+        }
+    }
+}
+
+/* Mask */
+.mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity .6s;
+}
+.mask.active {
+    opacity: 1;
+}
+/* Mask End */
+
+/* Closer */
+.closer {
+    height: 100%;
+    cursor: pointer;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
+.closer i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    transition: color .3s, background-color .3s;
+}
+.closer i:hover {
+    color: white;
+    background-color: rgba(235, 235, 235, 0.1);
+}
+.closer i:active {
+    background-color: rgba(235, 235, 235, 0.15);
+}
+/* Closer End */

@@ -1,0 +1,33 @@
+/**
+ * =============================================================================
+ * ************   Material Icons   ************
+ * =============================================================================
+ *
+ * https://github.com/google/material-design-icons/
+ * v3.0.1
+ */
+
+@font-face {
+    font-family: "Material Icons";
+    src: local('Material Icons'), local('MaterialIcons-Regular'), url(./MaterialIcons-Regular.woff2) format("woff2");
+}
+.material-icons {
+    font-size: 24px;
+    font-style: normal;
+    text-transform: none;
+    font-family: "Material Icons" !important;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+    /* Support for IE. */
+    -webkit-font-feature-settings: 'liga';
+            font-feature-settings: 'liga';
+}

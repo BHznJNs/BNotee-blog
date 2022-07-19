@@ -1,0 +1,112 @@
+@import url(./materialIcons.css);
+
+.folder-item {
+    width: 100%;
+    list-style: none;
+    margin-bottom: 0;
+}
+.item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0 16px;
+    margin-bottom: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    text-decoration: none;
+    cursor: pointer;
+    user-select: none;
+    -webkit-transition: background-color 0.3s;
+            transition: background-color 0.3s;
+}
+
+.item:hover {
+    background-color: #EEE;
+}
+.item-avatar {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    margin: 4px 8px 4px 0;
+    color: #FFFFFF;
+    line-height: 36px;
+    text-align: center;
+    background-color: #BDBDBD;
+    border-radius: 50%;
+}
+.item-name {
+    padding: 4px 0;
+    border-bottom: 1px solid #E0E0E0;
+    vertical-align: text-bottom;
+    font-family: sans-serif;
+}
+
+.item.selected {
+    background-color: #dddddd !important;
+    border: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+}
+
+.folder {
+    display: none;
+    width: 100%;
+    margin-bottom: 0;
+    list-style: none;
+    background-color: transparent;
+    border: none !important;
+    overflow: hidden;
+    transition: max-height .3s;
+}
+
+/* FAB */
+.fab {
+    position: fixed;
+    /* 手机平板上距离屏幕右下角 16px */
+    right: 16px;
+    bottom: 16px;
+    width: 56px;
+    height: 56px;
+    line-height: 56px;
+    border-radius: 50%;
+    border: none;
+    text-align: center;
+    outline: none;
+    cursor: pointer;
+    color: white;
+    background-color: #546e7a;
+    -webkit-box-shadow: var(--shadow-6);
+            box-shadow: var(--shadow-6);
+    -webkit-transition: all 0.2s, -webkit-box-shadow 0.2s;
+            transition: all 0.2s, -webkit-box-shadow 0.2s;
+            transition: all 0.2s, box-shadow 0.2s;
+            transition: all 0.2s, box-shadow 0.2s, -webkit-box-shadow 0.2s;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+.fab:disabled {
+    pointer-events: none;
+    opacity: 0.76;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+}
+.fab:hover {
+    opacity: 0.87;
+    -webkit-box-shadow: var(--shadow-8);
+            box-shadow: var(--shadow-8);
+}
+.fab:active {
+    opacity: 0.76;
+    -webkit-box-shadow: var(--shadow-8);
+            box-shadow: var(--shadow-8);
+}
+@media (min-width: 1024px) {
+    .fab {
+        /* 电脑上距离屏幕右下角 24px */
+        right: 24px;
+        bottom: 24px;
+    }
+}
