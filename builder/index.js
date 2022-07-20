@@ -26,7 +26,8 @@ const latestBlock = {
 }
 
 for (const item of latest) {
-    const itemContent = fs.readFileSync(item, "utf-8")
+	const itemPath = item.replace("../", "")
+    const itemContent = fs.readFileSync(itemPath, "utf-8")
     const itemObj = JSON.parse(itemContent)
     const title = itemObj.CTS[0].CT
     latestBlock.CTS.push({

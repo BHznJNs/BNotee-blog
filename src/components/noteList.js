@@ -74,28 +74,9 @@ class NoteList extends Drawer {
             alert("未选择博客，无法下载。")
             return
         }
-
         const loc = selectedNode.getAttribute(":location")
         location.hash = "/" + loc
     }
-
-    // static download(src) {
-    //     let url
-    //     if (!src) {
-    //         const selectedNode = this.__selectedNode
-    //         if (!selectedNode) {
-    //             alert("未选择博客，无法下载。")
-    //             return
-    //         }
-
-    //         const loc = selectedNode.getAttribute(":location")
-    //         location.hash = "/" + loc
-    //     } else {
-    //         url = releasePath + src
-    //     }
-
-        
-    // }
 }
 customElements.define("note-list", NoteList)
 export default NoteList

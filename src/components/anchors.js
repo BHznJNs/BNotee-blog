@@ -1,4 +1,4 @@
-import Drawer from "./drawer";
+import Drawer from "./drawer"
 import style from "../style/anchors.css"
 
 function anchorNodeCreate(level, href, content) {
