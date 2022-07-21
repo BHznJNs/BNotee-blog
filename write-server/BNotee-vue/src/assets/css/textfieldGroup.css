@@ -61,19 +61,18 @@
     padding: 6px 4px;
     border-bottom: solid 2px #bdbdbd;
     font-family: sans-serif;
+    overflow-y: auto;
     cursor: pointer;
     transition: .3s;
 }
 .textfield:focus {
     cursor: text;
 }
-.fixed .textfield {
-    overflow-y: auto;
-}
 /* Textfield End */
 
 /* Textfield Closer Button */
 .textfield-closer {
+    height: auto !important;
     border-bottom: solid 2px #bdbdbd;
     line-height: 32px;
 }
@@ -83,11 +82,9 @@
 /* Textfield Closer Button End */
 
 /* In Uploader */
-.note-list > .textfield-group > .selector {
+.note-view > .textfield-group > .selector {
     display: none;
 }
-.note-list > .textfield-group {
-    position: absolute;
+.note-view > .textfield-group {
     bottom: 0;
-    width: 100%;
 }

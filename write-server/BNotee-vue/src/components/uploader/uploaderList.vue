@@ -23,8 +23,6 @@
                 :name="item"
             />
         </template>
-
-        <slot></slot>
     </ul>
 </template>
 <script>

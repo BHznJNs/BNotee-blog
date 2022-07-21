@@ -23,15 +23,10 @@ const dataDirPath = "./data"
 const noteListPath = "./data/notes.json"
 const configPath = "./config.json"
 const configDefaultContent = 
-`# Default \`User\`
-username = "User"
-
-# Default 123456
-# maxLength --> 10
-password = 123456
-
-# Default 3030
-port = 3030`
+`{
+  "password": "123456",
+  "port": 3030
+}`
 
 createFile(dataDirPath, null, "folder")
 createFile(noteListPath, "[]", "file")

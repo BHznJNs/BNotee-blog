@@ -17,13 +17,12 @@
             <!-- Note View -->
             <div class="note-view-outer">
                 <div class="note-view">
-                    <uploader-list :list="noteList">
-                        <textfield-group
-                            @return-node="creatFolder"
-                            :isAdding="addingFolder"
-                            ref="textfieldGroup"
-                        />
-                    </uploader-list>
+                    <uploader-list :list="noteList"/>
+                    <textfield-group
+                        @return-node="creatFolder"
+                        :isAdding="addingFolder"
+                        ref="textfieldGroup"
+                    />
                 </div>
             </div>
 
