@@ -1,7 +1,13 @@
+h1, h2, h3,
+h4, h5, p,
+li, {
+    max-width: 100vw;
+}
+
 h1:empty, h2:empty, h3:empty,
 h4:empty, h5:empty,
 p:empty, li:empty {
-    padding-left: .2rem;
+    padding-left: 4px;
     border: solid 2px #EEEEEE !important;
 }
 li:empty {

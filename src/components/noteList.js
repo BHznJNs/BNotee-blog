@@ -2,8 +2,6 @@ import Drawer from "./drawer"
 import {NoteListFile, NoteListFolder} from "./noteListItem"
 import style from "../style/noteList.css"
 
-const releasePath = "../release/"
-
 function noteListInit(parent, noteList) {
     for (const item of noteList) {
         let childNode

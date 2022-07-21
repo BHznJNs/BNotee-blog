@@ -18,17 +18,27 @@ globalThis.HTMLParser = htmlParser
 globalThis.Compiler = compiler
 globalThis.Init = init
 
-function defaultContentDownloader() {
+function defaultContentDownloader(times=0) {
+    if (times > 10) {
+        // 重试次数超过十次
+        alert("加载首页内容失败，请稍后再试。")
+        return
+    }
+
     import("./defaultContent.js")
     .then(res => {
         const data = res.default
         globalThis.Init(data)
     }).catch(e => {
         console.error(e)
-        contentInit(times + 1)
+        // 加载失败，重试
+        defaultContentDownloader(times + 1)
     })
 }
 
+/**
+ * @description Hash change event function
+ */
 function hashEvent() {
     if (location.hash) { // 是否存在 hash
         const hash = location.hash.slice(1)
@@ -42,12 +52,13 @@ function hashEvent() {
 window.addEventListener("hashchange", hashEvent)
 
 window.onload = () => {
-    (function contentInit(times) {
-        if (times > 10) { // 重试次数大于 10
-            alert("加载首页内容失败！")
-            return
-        }
-        hashEvent()
-    })(0)
+    // (function contentInit(times) {
+    //     if (times > 10) { // 重试次数大于 10
+    //         alert("加载首页内容失败！")
+    //         return
+    //     }
+        
+    // })(0)
+    hashEvent()
     globalThis.NoteList.init()
 }

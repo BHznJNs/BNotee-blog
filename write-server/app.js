@@ -1,4 +1,4 @@
-require("./scripts/initFileCreate")
+// require("./scripts/initFileCreate")
 require("./scripts/global/readConfig")
 require("./scripts/global/readNoteList")
 require("./scripts/global/status")

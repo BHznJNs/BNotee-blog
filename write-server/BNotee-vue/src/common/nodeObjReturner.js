@@ -16,6 +16,11 @@ export default (tagName, content) => {
             obj.CT = content
             obj.CL = "#333"
             break
+        case "link":
+            obj.HF = content
+            obj.CT = ""
+            obj.CL = "#333"
+            break
         case "hr":
             break
         case "floor":

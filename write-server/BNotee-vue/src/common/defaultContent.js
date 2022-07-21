@@ -11,7 +11,6 @@
     LG --> Language
 */
 export default {
-// module.exports = {
     NM: "Example",
     HT: [],
     CTS: [
@@ -33,6 +32,12 @@ export default {
             NT: "p",
             CT: "内联样式实例（均使用英文符号）：##粗体## ``代码`` __下划线__ //斜体// --删除-- ::淡化::",
             CL: "#333",
+        },
+        {
+            NT: "link",
+            CT: "一个链接",
+            HF: "https://www.bing.com",
+            CL: "#333"
         },
         {
             NT: "floor",

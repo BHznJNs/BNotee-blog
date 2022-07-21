@@ -10,6 +10,7 @@
         >
             <option value="h">标题</option>
             <option value="p">段落</option>
+            <option value="link">链接</option>
             <option value="hr">割线</option>
             <option value="floor">层次</option>
             <option value="ol">序列</option>

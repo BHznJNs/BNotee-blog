@@ -2,6 +2,7 @@
 import { h } from "vue"
 import Heading from "./heading"
 import BasicNode from "./basicNode"
+import AnchorLink from "./anchorLink"
 import ListBlock from "./listBlock"
 import TableBlock from "./tableBlock"
 import DetailBlock from "./detailBlock"
@@ -23,6 +24,13 @@ export default {
                 nodeProps.level = this.level
                 nodeProps.content = this.nodeObj.CT
                 nodeProps.color = this.nodeObj.CL
+                break
+            case "link":
+                nodeType = AnchorLink
+                nodeProps.tagName = "a"
+                nodeProps.content = this.nodeObj.CT
+                nodeProps.color = this.nodeObj.CL
+                nodeProps.href = this.nodeObj.HF
                 break
             case "list":
                 nodeType = ListBlock

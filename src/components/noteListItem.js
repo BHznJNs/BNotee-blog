@@ -56,14 +56,14 @@ class NoteListFolder extends HTMLLIElement {
     setList(list) {
         const location = this.getAttribute(":location")
         for (const item of list) {
-            let childNode, loc
+            let childNode
             if (typeof item == "string") {
                 childNode = new NoteListFile(item)
-                loc = location + "/" + item
+                const loc = location + "/" + item
                 childNode.setAttribute(":location", loc)
             } else {
                 childNode = new NoteListFolder(item[0])
-                loc = location + "/" + item[0]
+                const loc = location + "/" + item[0]
                 childNode.setAttribute(":location", loc)
                 childNode.setList(item[1])
             }

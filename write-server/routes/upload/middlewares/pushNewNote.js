@@ -3,11 +3,11 @@
  */
 function pushNewNote(req, res, next) {
     const isNew = res.locals.isNew
-        //    -------------- Blog ver -------------
+    //        --------- server ver without --------
     if (isNew && (req.body.noteName != "__INDEX__")) {
         const noteName = req.body.noteName
         const folder = res.locals.folder
-        // server .ver: push
+// server ver: push
         folder.unshift(noteName)
     }
     next()

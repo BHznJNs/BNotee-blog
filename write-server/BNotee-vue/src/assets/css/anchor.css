@@ -1,11 +1,13 @@
 a {
     position: relative;
     display: block;
-    max-width: 100%;
+    min-width: 2em;
+    max-width: 100vw;
     padding: 2px 6px;
     margin-bottom: 4px;
     font-size: 1.2rem;
     overflow: hidden;
+    outline: none;
     text-decoration: none;
     text-overflow: ellipsis;
     user-select: none;
@@ -13,7 +15,15 @@ a {
     color: #333;
     background-color: #F5F5F5;
     cursor: pointer;
-    transition: color .3s, background .3s;
+    transition: color .3s, background .3s, padding .6s;
+}
+
+a:empty::before {
+    width: 100%;
+}
+
+.note a {
+    width: fit-content;
 }
 
 a::before {

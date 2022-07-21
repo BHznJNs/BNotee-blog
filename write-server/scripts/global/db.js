@@ -2,6 +2,7 @@ const saveJSON = require("../saveJSON")
 const fs = require("fs")
 
 const basePath = "../release/"
+const defaultContentPath = "../src/defaultContent.js"
 const latestData = fs.readFileSync("../builder/latest.json", "utf-8")
 globalThis.Latest = JSON.parse(latestData)
 
@@ -21,7 +22,7 @@ function access(path) {
 function write(isNew, path, data, callback) {
     if (path == "__INDEX__") {
         // 写入默认笔记
-        path = "../dist/assets/defaultContent.js"
+        path = defaultContentPath
         data = "export default " + data
         write(false, "../src/defaultContent.js", data, () => {})
     } else {
@@ -33,7 +34,7 @@ function write(isNew, path, data, callback) {
             fs.mkdirSync(path)
         } else {
             fs.writeFileSync(path, data)
-            if (isNew && path != "../dist/assets/defaultContent.js") {
+            if (isNew && path != defaultContentPath) {
                 globalThis.Latest.unshift(path)
                 // 控制数量为 5 个
                 if (globalThis.Latest.length > 5) {

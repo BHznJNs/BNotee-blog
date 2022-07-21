@@ -21,7 +21,7 @@ function createFile(path, content, type) {
 // 初始文件路径
 const dataDirPath = "./data"
 const noteListPath = "./data/notes.json"
-const configPath = "./config.ini"
+const configPath = "./config.json"
 const configDefaultContent = 
 `# Default \`User\`
 username = "User"
