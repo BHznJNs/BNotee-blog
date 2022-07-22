@@ -8,7 +8,7 @@
 .item {
     display: flex;
     align-items: center;
-    width: fit-content;
+    width: 100%;
     padding: 0 16px;
     margin-bottom: 0;
     -webkit-box-sizing: border-box;
@@ -25,6 +25,7 @@
 }
 .item-avatar {
     display: inline-block;
+    flex: none;
     width: 36px;
     height: 36px;
     margin: 4px 8px 4px 0;
