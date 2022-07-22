@@ -3,6 +3,7 @@ class NoteListFile extends HTMLLIElement {
         super()
         this.classList.add("item")
         this.slot = "content"
+        this.title = name
         this.innerHTML =
         `<i class="item-avatar material-icons">assignment</i>
         <span class="item-name">${name}</span>`
