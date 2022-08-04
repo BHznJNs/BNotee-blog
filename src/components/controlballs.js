@@ -5,6 +5,10 @@ const html =
 <div class="mask"></div>
 <i class="material-icons">apps</i>
 </div>
+<!-- 返回首页 -->
+<div class="ball">
+<i class="material-icons home">home</i>
+</div>
 <!-- 打开笔记概要 -->
 <div class="ball">
 <i class="material-icons anchors">subtitles</i>
@@ -32,6 +36,7 @@ class ControlBalls extends HTMLElement {
             darkMode: shadow.querySelector(".dark-mode"),
             noteList: shadow.querySelector(".note-list"),
             anchors: shadow.querySelector(".anchors"),
+            home: shadow.querySelector(".home"),
         }
     }
 
@@ -43,11 +48,15 @@ class ControlBalls extends HTMLElement {
             const el = e.target
             el.innerText = (isDarken) ? "wb_sunny" : "brightness_2"
         })
+        els.noteList.addEventListener("click", () => {
+            globalThis.NoteList.toggle()
+        })
         els.anchors.addEventListener("click", () => {
             globalThis.Anchors.toggle()
         })
-        els.noteList.addEventListener("click", () => {
-            globalThis.NoteList.toggle()
+        // 返回主页
+        els.home.addEventListener("click", () => {
+            location.hash = ""
         })
     }
 }

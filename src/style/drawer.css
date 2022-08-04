@@ -20,6 +20,8 @@
     z-index: 1;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
     margin: 0;
     overflow: hidden;
     white-space: nowrap;
@@ -32,11 +34,9 @@
             transition: transform .9s .3s;
 }
 .drawer-view {
-    position: absolute;
-    top: 72px;
-    bottom: 0;
+    flex: 1;
     width: 100%;
-    padding: 8px 0;
+    padding: 16px 0;
     overflow: auto;
 }
 ::-webkit-scrollbar {
@@ -60,7 +60,6 @@
     justify-content: space-between;
     align-items: center;
     padding: 8px 8px;
-    margin-bottom: 16px;
     background-color: #333;
     color: white;
     z-index: 1;
