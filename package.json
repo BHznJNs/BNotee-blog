@@ -1,4 +1,6 @@
 {
+  "name": "BNotee-blog",
+  "version": "1.0.1",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
