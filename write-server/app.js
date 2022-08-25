@@ -1,8 +1,11 @@
-// require("./scripts/initFileCreate")
-require("./scripts/global/readConfig")
+require("./scripts/initFileCreate")
 require("./scripts/global/readNoteList")
 require("./scripts/global/status")
 require("./scripts/global/db")
+
+const config = require("../config.js")
+globalThis.Config = config.write
+globalThis.LatestMaximum = config.latest.maximum
 
 const bodyParser = require("body-parser")
 const express = require("express")

@@ -52,13 +52,6 @@ function hashEvent() {
 window.addEventListener("hashchange", hashEvent)
 
 window.onload = () => {
-    // (function contentInit(times) {
-    //     if (times > 10) { // 重试次数大于 10
-    //         alert("加载首页内容失败！")
-    //         return
-    //     }
-        
-    // })(0)
     hashEvent()
     globalThis.NoteList.init()
 }

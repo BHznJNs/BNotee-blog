@@ -36,8 +36,9 @@ function write(isNew, path, data, callback) {
             fs.writeFileSync(path, data)
             if (isNew && path != defaultContentPath) {
                 globalThis.Latest.unshift(path)
-                // 控制数量为 5 个
-                if (globalThis.Latest.length > 5) {
+                // 控制数量为 maximum 个(默认为 10)
+                const maximum = globalThis.LatestMaximum
+                if (globalThis.Latest.length > maximum) {
                     globalThis.Latest.pop()
                 }
             }
