@@ -61,6 +61,7 @@
             <div
                 class="tool btn btn-shallow"
                 @click="openUploader"
+                @contextmenu.prevent="saveMarkdown"
             >
                 <i class="material-icons">cloud_upload</i>
             </div>
@@ -89,6 +90,7 @@ import Info from "./info.vue"
 import getNodeObj from "./mixin/getNodeObj"
 import insertNode from "./mixin/insertNode.js"
 import deleteNode from "./mixin/deleteNode.js"
+import markdownExport from "../common/markdownExport"
 import EventBus from "../common/EventBus"
 import saveAs from "file-saver"
 
@@ -188,6 +190,16 @@ export default {
             )
             const name = this.note.NM || "MyNote"
             saveAs(blob, name + ".json")
+        },
+        // 方法：markdown 格式导出
+        saveMarkdown() {
+            const markdown = markdownExport(this.note)
+            let blob = new Blob(
+                [markdown],
+                {type: "text/plain;charset=utf-8"}
+            )
+            const name = this.note.NM || "MyNote"
+            saveAs(blob, name + ".md")
         },
         // 方法：读取本地笔记
         readNote() {
