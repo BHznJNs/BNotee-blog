@@ -1,8 +1,6 @@
-const fs = require("fs")
+const config = require("./config.js")
 const express = require("express")
 const app = express()
-
-const config = require("./config.js")
 
 const port = config.blog.port
 

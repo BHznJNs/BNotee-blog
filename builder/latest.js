@@ -25,17 +25,26 @@ const latestBlock = {
     }]
 }
 
-for (const item of latest) {
-	const itemPath = item.replace("../", "")
-    const itemContent = fs.readFileSync(itemPath, "utf-8")
-    const itemObj = JSON.parse(itemContent)
-    const title = itemObj.CTS[0].CT
+if (latest.length) {
+    for (const item of latest) {
+        const itemPath = item.replace("../", "")
+        const itemContent = fs.readFileSync(itemPath, "utf-8")
+        const itemObj = JSON.parse(itemContent)
+        const title = itemObj.CTS[0].CT
+        latestBlock.CTS.push({
+            NT: "link",
+            CT: title,
+            HF: item.replace("../release", "#")
+        })
+    }
+} else {
     latestBlock.CTS.push({
-        NT: "link",
-        CT: title,
-        HF: item.replace("../release", "#")
+        NT: "p",
+        CT: "暂无更新",
+        CL: "#333",
     })
 }
+
 defaultContentObj.CTS.push(latestBlock)
 newDefaultContent = "export default " + JSON.stringify(defaultContentObj)
 

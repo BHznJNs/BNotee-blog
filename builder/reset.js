@@ -1,5 +1,9 @@
 const fs = require("fs")
 
+// 清空最近更新
+const latestPath = "./builder/latest.json"
+fs.writeFileSync(latestPath, "[]")
+
 const releasePath = "./release"
 const noteListPath = "./noteList.json"
 
