@@ -6,7 +6,8 @@
     "build": "vite build",
     "preview": "node preview.js",
     "write": ". ./write-server/start-write.sh",
-    "latest": "node ./builder/index.js"
+    "latest": "node ./builder/latest.js", "Comment 0": "获取并更新 “最近更新” 内容",
+    "reset": "node ./builder/reset.js", "Comment 1": "如果 release 文件夹被更改，读取并更新到 noteList.json"
   },
   "devDependencies": {
     "express": "^4.18.1",
