@@ -10,4 +10,7 @@ router.use(require("./create/index"))
 router.use(require("./delete/index"))
 router.use(require("./noteList"))
 
+router.use(require("./image/get"))
+router.use(require("./image/upload"))
+
 module.exports = router

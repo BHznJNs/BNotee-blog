@@ -9,7 +9,7 @@ function dbRead(req, res, next) {
             // 数据库写入出错
             console.warn(err)
             res.send(dbWriteErrMsg)
-        } else { //         Server ver: *** .json
+        } else { //         server ver: *** .json
             res.locals.noteContent = content
             next()
         }

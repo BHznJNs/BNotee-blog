@@ -19,6 +19,10 @@ class DarkMask extends HTMLDivElement {
     toggle() {
         this.classList.toggle("darken")
         this.#isDarken = !this.#isDarken
+
+        for (const imgNode of globalThis.ImageList) {
+            imgNode.classList.toggle("reverse", this.#isDarken)
+        }
         return this.#isDarken
     }
 }

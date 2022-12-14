@@ -4,5 +4,8 @@ function init(data) {
     globalThis.HLJS.highlightAll()
     globalThis.Compiler.init()
     globalThis.Anchors.init()
+    setTimeout(() => {
+        globalThis.ImageList = document.querySelectorAll("img")
+    }, 0)
 }
 export default init

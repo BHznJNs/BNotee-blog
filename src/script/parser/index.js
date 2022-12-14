@@ -30,8 +30,12 @@ function returner(item, level) {
         case "p":
             result = h("p", content, ["inline-style"], color)
             break
+        case "img":
+            const imgNode = `<img src="./imgs/${item.SRC}" alt="${content}">`
+            result = h("div", imgNode + h("p", content))
+            break
         case "link":
-            result = `<a is="anchor-link" href="${item.HF}">${content}</a>`
+            result = `<a is="anchor-link" href="${item.SRC}">${content}</a>`
             break
         case "hr":
             result = h("hr", "", [], null, true)

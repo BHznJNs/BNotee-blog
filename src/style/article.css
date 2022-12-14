@@ -63,7 +63,24 @@ p {
     margin-top: 0;
     margin-bottom: 6px;
 }
+img ~ p {
+    text-align: center;
+    text-decoration: underline;
+}
 /* Paras End */
+
+/* Image Start */
+.note img {
+    max-width: 100%;
+    max-height: 50vh;
+    margin-right: 12px;
+    border-bottom: solid 2px #999;
+    cursor: pointer;
+}
+.note img.reverse {
+    mix-blend-mode: difference;
+}
+/* Image End */
 
 /* List Start */
 .note > ol, .note > ul {

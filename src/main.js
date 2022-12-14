@@ -17,6 +17,7 @@ globalThis.HLJS = hljs
 globalThis.HTMLParser = htmlParser
 globalThis.Compiler = compiler
 globalThis.Init = init
+globalThis.ImageList = null
 
 function defaultContentDownloader(times=0) {
     if (times > 10) {
@@ -49,9 +50,19 @@ function hashEvent() {
         defaultContentDownloader()
     }
 }
-window.addEventListener("hashchange", hashEvent)
 
 window.onload = () => {
     hashEvent()
     globalThis.NoteList.init()
 }
+// 添加路由变化监听
+window.addEventListener("hashchange", hashEvent)
+
+// 点击图片时，在新窗口打开图片
+document.querySelector("main.note")
+.addEventListener("click", (e) => {
+    const target = e.target
+    if (target.tagName == "IMG") {
+        window.open(target.src)
+    }
+})
