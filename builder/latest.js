@@ -34,7 +34,7 @@ if (latest.length) {
         latestBlock.CTS.push({
             NT: "link",
             CT: title,
-            HF: item.replace("../release", "#")
+            SRC: item.replace("../release", "#")
         })
     }
 } else {
