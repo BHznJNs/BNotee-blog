@@ -31,7 +31,7 @@ function returner(item, level) {
             result = h("p", content, ["inline-style"], color)
             break
         case "img":
-            const imgNode = `<img src="./imgs/${item.SRC}" alt="${content}">`
+            const imgNode = `<img src="../imgs/${item.SRC}" alt="${content}">`
             result = h("div", imgNode + h("p", content))
             break
         case "link":

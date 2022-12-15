@@ -10,7 +10,11 @@ const storage = multer.diskStorage({
     },
     // 用来配置上传文件的名称（包含后缀）
     filename: (req, file, cb) => {
-        cb(null, file.originalname)
+        // 防止中文文件名乱码
+        const fileName = Buffer
+        .from(file.originalname, "latin1")
+        .toString("utf8")
+        cb(null, fileName)
     }
 })
 

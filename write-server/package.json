@@ -1,6 +1,6 @@
 {
   "name": "BNotee-server in BNotee-blog",
-  "version": "1.1.5",
+  "version": "1.1.7",
   "homepage": "https://github.com/BHznJNs/BNotee-server",
   "scripts": {
     "start": "node app.js"
